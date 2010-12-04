@@ -5,16 +5,28 @@
       version="1.0.0.qualifier"
       provider-name="Remain Software">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description url="http://www.remainsoftware.com">
+      This feature is the Feature Explorer. It providers a view that
+enables you to explore the installed features. You can also search
+for bundles to find out in which feature they appear.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright url="http://www.remainsoftware.com">
+      Copyright (c) 2010 Weltevree Beheer BV, Remain Software &amp; Industrial-TSI
+&lt;p/&gt; 
+All rights reserved.&lt;br/&gt; 
+This program and the accompanying materials are made available
+under the terms of
+the Eclipse Public License v1.0 which accompanies this distribution,
+and is
+available at http://www.eclipse.org/legal/epl-v10.html
+&lt;p/&gt;
+Contributors:&lt;br/&gt;
+Wim S. Jongman - initial API and implementation
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
+   <license url="http://www.remainsoftware.com">
+      You&apos;re covered. Just press Yes.
    </license>
 
    <includes
