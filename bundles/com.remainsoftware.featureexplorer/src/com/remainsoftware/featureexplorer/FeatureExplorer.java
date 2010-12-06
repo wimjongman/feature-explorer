@@ -2,7 +2,6 @@ package com.remainsoftware.featureexplorer;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.layout.TreeColumnLayout;
@@ -21,9 +20,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.ui.views.properties.IPropertySource;
 
 import com.remainsoftware.featureexplorer.internal.DescriptionColumnLabelProvider;
 import com.remainsoftware.featureexplorer.internal.FeatureExplorerAdapterFactory;
@@ -130,12 +127,12 @@ public class FeatureExplorer extends ViewPart {
 	private void createContextMenu() {
 		// Create menu manager.
 		MenuManager menuMgr = new MenuManager();
-//		menuMgr.setRemoveAllWhenShown(true);
-//		menuMgr.addMenuListener(new IMenuListener() {
-//			public void menuAboutToShow(IMenuManager mgr) {
-//				fillContextMenu(mgr);
-//			}
-//		});
+		// menuMgr.setRemoveAllWhenShown(true);
+		// menuMgr.addMenuListener(new IMenuListener() {
+		// public void menuAboutToShow(IMenuManager mgr) {
+		// fillContextMenu(mgr);
+		// }
+		// });
 
 		// Create menu.
 		Menu menu = menuMgr.createContextMenu(treeViewer.getControl());
@@ -143,44 +140,6 @@ public class FeatureExplorer extends ViewPart {
 
 		// Register menu for extension.
 		getSite().registerContextMenu(menuMgr, treeViewer);
-	}
-
-	protected void fillContextMenu(IMenuManager mgr) {
-
-		Action showPropAction = new Action() {
-			@Override
-			public void run() {
-				try {
-					getSite().getPage().showView(
-							"org.eclipse.ui.views.PropertySheet");
-				} catch (PartInitException e) {
-				}
-			}
-
-			@Override
-			public String getText() {
-				return "Show Properties View";
-			}
-		};
-		mgr.add(showPropAction);
-
-		Action registerAdapters = new Action() {
-			@Override
-			public void run() {
-
-				Platform.getAdapterManager().registerAdapters(
-						FeatureExplorerAdapterFactory.getInstance(),
-						IPropertySource.class);
-
-			}
-
-			@Override
-			public String getText() {
-				return "Register Adapters";
-			}
-		};
-		mgr.add(registerAdapters);
-
 	}
 
 	@Override
